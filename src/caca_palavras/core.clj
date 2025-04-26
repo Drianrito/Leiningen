@@ -7,8 +7,6 @@
 
 (def alfabeto "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
-(def palavras-escondidas (atom [])) ; agora é um atom
-
 (defn gerar-grade [tamanho]
   (vec (repeat tamanho (vec (repeat tamanho nil)))))
 
@@ -106,8 +104,7 @@
 
 (defn encontrou-palavra? [grade palavra]
   (or (palavra-horizontal? grade palavra)
-      (palavra-vertical? grade palavra))) ; por enquanto, só horizontal e vertical
-
+      
 (defn jogar []
   (let [tamanho 10
         grade (gerar-grade-com-palavras tamanho (shuffle todas-palavras))
